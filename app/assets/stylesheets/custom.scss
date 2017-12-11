@@ -1,0 +1,188 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/* universal */
+body {
+  padding-top: 60px;
+}
+section {
+  overflow: auto;
+}
+textarea {
+  resize: vertical;
+}
+.center {
+  text-align: center;
+    padding: none;
+    background-color: #fff;
+}
+
+.center h1 {
+  margin-bottom: 10px;
+}
+
+p.notice{
+  color: red;
+  position: center;
+  border: 1px solid;
+  border-color: black;
+  text-align:center;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+  color:#000;
+}
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  color:#000;
+}
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #000;
+}
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+a :hover{
+  background: yellow;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+/* footer */
+
+footer {
+  display: inline-block;
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+}
+footer a {
+  color: #555;
+}
+footer a:hover {
+  color: black;
+  background-color: yellow;
+}
+footer ul {
+  float: right;
+  list-style: none;
+}
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+/*container*/
+.navbar{
+    background-color:#fff;
+
+}
+
+/*main boxes*/
+.box{
+    height: 700px;
+    width: 300px;
+    display: inline-block; 
+    text-align: left; 
+    margin-right: 1%;
+    margin-left: 0px;
+}
+
+.box :hover{
+  opacity: 0.5;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#box4{
+    
+    display: inline-block;
+    margin: 0 auto;
+    text-align: left;
+    width: 500px;
+}
+
+#about1{
+    height: 143px;
+    display: inline-block;
+}
+
+#about2{
+    height: 500px;
+    display: inline-block;
+
+}
+
+/*application page css*/
+div.searchbox {
+	float:right;
+}
+
+div#container {
+    border:2px black solid;
+}
+
+div.menubox{
+  border: 1px solid;
+  border-color: black;
+  height: 30px;
+  width: 100px;
+  text-align: center;
+  float: left;
+  margin: 1px;
+}
+
+div.menubox :hover{
+  text-decoration: line-through;
+  background: yellow;
+}
+
+
+/* DivTable.com */
+.divTable{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+  margin-left: 100px;
+}
+
+.divproduct{
+	border: 1px solid #999999;
+	text-align: center;
+	width: 300px;
+	height: 500px;
+  float: left;
+}
+
+#main-container{
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}

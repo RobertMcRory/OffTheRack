@@ -1,0 +1,55 @@
+<h1>Your Cart</h1>
+<% if @cart.empty? %>
+    <p>Your cart is empty.</p>
+<% end %>
+
+<% total=0 %>
+<div class="carttable" style="position: center;"></div>
+<table class="cart" style="border: solid 2pt black; border-collapse: collapse;">
+    <tr style="border-bottom: solid 2pt black; background-color: yellow">
+        <td class="legend"></td>
+        <td class="legend">Product</td>
+        <td class="legend">Option</td>
+        <td class="legend">Price</td>
+        <td class="legend">Quantity</td>
+        <td class="legend">Total</td>
+    </tr>
+    
+    <% @cart.each do |id, quantity | %>
+        <% product = Product.find_by_id(id) %>
+        <tr>
+            <td style="border: solid 2pt black;">
+                <div class="image">
+                    <%= link_to (image_tag product.image_url, :style => "height:50px"), product %>
+                </div>
+            </td>
+            <td class="title" style="border: solid 2pt black;"><%= link_to product.title, product %></td>
+            <td style="border: solid 2pt black;"><a href="/cart/remove/<%= product.id %>">Remove from Cart</a></td>
+            <td class="price" style="border: solid 2pt black;"><%= number_to_currency(product.price, :unit => "€") %></td>
+            <td class="quantity" style="border: solid 2pt black;"><%= quantity %></td>
+            <td class="price" style="border: solid 2pt black;"><%= number_to_currency(quantity * product.price, :unit => "€") %></td>
+            <tr style="border: solid 2pt black;">
+                <% total += quantity * product.price %>
+                <% end %>
+            </tr>
+            
+            <td colspan="4">
+                <div class="total" style="background-color:yello">Total:</div>
+            </td>
+            <td>
+                <div class="price"><% number_to_currency(total, :unit => "Eur") %></div>
+            </td>
+          </tr>  
+        
+</table>
+</div>
+</br>
+<div class="carttable2" style="text-align: center;">
+<table style="border: solid 2pt black; background-color: yellow;">
+<tr style="border: solid 2pt black;">
+    <td style="border: solid 2pt black;"> <%= link_to 'Clear Cart', :controller => "cart", :action => "clearCart" %></td>
+    <td style="border: solid 2pt black;"><%= link_to 'Continue Shopping', :controller => :products %></td>
+    <td style="border: solid 2pt black;"><%= link_to 'Checkout', controller => "cart", :action => "createOrder" %></td>
+</tr>
+</table>
+</div>

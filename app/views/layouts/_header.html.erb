@@ -1,0 +1,19 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+       <a href="/main"><h4 id="logo">OfftheRack</h4></a>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home",  root_path %></li>
+            <li><%= link_to "Catalog",   products_path %></li>
+            <% if user_signed_in? %>
+            <li><%= link_to current_user.first_name+"'s"+' Profile', user_path(current_user.id) %></li>
+            <li><%= link_to 'Log Out', destroy_user_session_path, :method => :delete %></li>
+            <% else %>
+            <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+            <li><%= link_to 'Log In', new_user_session_path %></li>
+            <% end %>
+            <li><%= link_to "Cart",  cart_path %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>

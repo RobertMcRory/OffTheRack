@@ -1,0 +1,31 @@
+<div class="center jumbotron">
+<% provide(:title, "Profile - ") %>
+
+<div class ="LoginBox">
+    <% if user_signed_in? %>
+    <%= link_to 'Edit profile', edit_user_registration_path %>
+    <% else %>
+    <h6>You must be signed in to access your profile</h6>
+    <%= link_to 'Home', root_path %>
+    <% end %>
+</div>
+
+
+
+<!--
+<div class="box" id="box1">
+    <%= image_tag("women.jpg", alt: "Women")%> 
+</div>
+<div class="box" id="box2">
+    <%= image_tag("men.jpg", alt: "Men")%> 
+</div>
+<div class="box" id="box3">
+    <%= image_tag("kids.jpg", alt: "Kids")%> 
+</div>
+<div class="box" id="box4">
+    <%= image_tag("sale.jpg", alt: "Sale")%>
+    <%= image_tag("sale.jpg", alt: "Sale")%> 
+</div>
+-->
+
+</div>

@@ -1,0 +1,52 @@
+
+<h1>Users</h1>
+
+<% if user_signed_in? %>
+<% if current_user.id == 1 || current_user.id == 2 %>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <td></td>
+      <th>First Name</th>
+      <td></td>
+      <th>Surname</th>
+      <td></td>
+      <th>Username</th>
+      <td></td>
+      <th>Signed Up</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td></td>
+        <td><%= user.first_name %></td>
+        <td></td>
+        <td><%= user.last_name %></td>
+        <td></td>
+        <td><%= user.username %></td>
+        <td></td>
+        <td><%= user.created_at %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% else %>
+
+<h3 style="text-align: center">This page is for administrators only.</h3>
+
+<% end %>
+
+<% else %>
+
+<h3 style="text-align: center">This page is for administrators only. <%= link_to 'Please log in.', new_user_session_path %></h3>
+
+<% end %>

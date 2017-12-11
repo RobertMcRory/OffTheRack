@@ -1,0 +1,20 @@
+<div class="center jumbotron">
+<% provide(:title, "Home - ") %>
+<h1>Welcome</h1>
+<br>
+
+<div class="box" id="box1">
+    <a href="/category/women"><%= image_tag("women.jpg", alt: "Women") %></a>
+</div>
+<div class="box" id="box2">
+    <a href="/category/men"><%= image_tag("men.jpg", alt: "Men")%></a>
+</div>
+<div class="box" id="box3">
+    <a href="/category/kids"><%= image_tag("kids.jpg", alt: "Kids")%></a>
+</div>
+<div class="box" id="box4">
+    <%= image_tag("sale.jpg", alt: "Sale")%>
+</div>
+
+</div>
+ <%= render 'layouts/categories' %>

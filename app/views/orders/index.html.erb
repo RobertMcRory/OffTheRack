@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<h1>Orders</h1>
+
+<% if user_signed_in? %>
+<% if current_user.id == 1 || current_user.id == 2 %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Order date</th>
+      <th>User</th>
+      <th>Status</th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.order_id %></td>
+        <td><%= order.user.username %></td>
+        <td><%= order.status %></td>
+        <td><%= link_to 'Show', order %></td>
+        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order', new_order_path %>
+
+<% else %>
+
+<h3 style="text-align: center">This page is for administrators only.</h3>
+
+<% end %>
+
+<% else %>
+
+<h3 style="text-align: center">This page is for administrators only. <%= link_to 'Please log in.', new_user_session_path %></h3>
+
+<% end %>

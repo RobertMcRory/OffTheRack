@@ -1,0 +1,73 @@
+<h1>Checkout</h1>
+
+<p>Thank you for placing an order!</p>
+<p><Strong>Order Reference: <%= @orders.id %></Strong></p>
+
+<table>
+    <thead>
+        <table style="border: solid 2pt black; border-collapse: collapse;">
+        <tr style="border-bottom: solid 2pt black; background-color: lightgreen">
+            <td class="legend">Product</td>
+            <td class="legend">Price</td>
+            <td class="legend">Quantity</td>
+            <td class="legend">Total</td>
+        </tr>
+        
+    </thead>
+    
+    <tbody>
+        <% @total = 0 %>
+        <% @orderitems.each do |id, quantity| %>
+        
+        <tr>
+            <% item = Orderitem.find_by_id(id) %>
+            
+            
+            <td class="title" style="border: solid 2pt black;"><%= item.title %></td>
+            <td class="price" style="border: solid 2pt black;"><%= number_to_currency(item.price, :unit=> "€" )%></td>
+            <td class="quantity" style="border: solid 2pt black;"><%= item.quantity %></td>
+            <td class="price" style="border: solid 2pt black;"><%= number_to_currency(item.quantity * item.price, :unit=> "€") %></td>
+        </tr>
+        
+        <% totx = (item.quantity * item.price) %>
+        
+        <% @total += totx %>
+        
+        <% end %>
+        
+        <% shipping = 10 %>
+        <% @overall = shipping + @total %>
+        
+        <tr style="border: solid 2pt black;">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        
+        <tr style="border: solid 2pt black; background-color: lightgreen">
+            <td>Sub Total</td>
+            <td>Shipping</td>
+            <td></td>
+            <td>Total</td>
+        </tr>
+        
+        <tr style="border: solid 2pt black;">
+            <td>&euro;<%= @total %></td>
+            <td>&euro;10</td>
+            <td></td>
+            <td>&euro; <%= @overall %></td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td><a href="/paid">Submit Payment</a></td>
+            <td></td>
+            <td style="border-right: solid 2pt black;"></td>
+        </tr>
+    </tbody>
+    
+    
+    
+</table>
+</div>
