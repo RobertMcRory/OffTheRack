@@ -2,6 +2,9 @@
 
 <h1>Categories</h1>
 
+<% if user_signed_in? %>
+<% if current_user.id == 1 || current_user.id == 2 %>
+
 <table>
   <thead>
     <tr>
@@ -27,5 +30,18 @@
 </table>
 
 <br>
+<%= link_to 'New Category', new_category_path %>
 
+<% else %>
 
+<br>
+<h3 style="text-align: center">This page is for administrators only.</h3>
+
+<% end %>
+
+<% else %>
+
+<br>
+<h3 style="text-align: center">This page is for administrators only. <%= link_to 'Please log in.', new_user_session_path %></h3>
+
+<% end %>

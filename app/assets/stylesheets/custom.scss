@@ -6,12 +6,7 @@
 body {
   padding-top: 60px;
 }
-section {
-  overflow: auto;
-}
-textarea {
-  resize: vertical;
-}
+
 .center {
   text-align: center;
     padding: none;
@@ -74,11 +69,14 @@ a :hover{
 /* footer */
 
 footer {
-  display: inline-block;
+
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
+  display: inline-block;
+  width: 100%;
+
 }
 footer a {
   color: #555;
@@ -88,12 +86,12 @@ footer a:hover {
   background-color: yellow;
 }
 footer ul {
-  float: right;
   list-style: none;
 }
 footer ul li {
-  float: left;
-  margin-left: 15px;
+  float: right;
+  margin: 15px;
+
 }
 
 /*container*/
@@ -101,6 +99,8 @@ footer ul li {
     background-color:#fff;
 
 }
+
+
 
 /*main boxes*/
 .box{
@@ -168,7 +168,7 @@ div.menubox :hover{
 /* DivTable.com */
 .divTable{
 	width: 100%;
-	height: 100%;
+	height: 80%;
 	text-align: center;
   margin-left: 100px;
 }
@@ -186,3 +186,4 @@ div.menubox :hover{
   width: 100%;
   display: inline-block;
 }
+

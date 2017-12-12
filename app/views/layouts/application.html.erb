@@ -3,6 +3,7 @@
   <head>
     <title><%= yield(:title) %>Off the Rack </title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content=" width=device-width,initial-scale=1">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -15,11 +16,12 @@
      <div id="main-container">
        <div id="content">
          <p class="notice"><%= flash[:notice] %></p>
-         <%= yield %>
+         <div><%= yield %></div>
        </div>
      </div>
-    
+    <br/>
+
     <%= render 'layouts/footer' %>
-    
+
   </body>
 </html>
